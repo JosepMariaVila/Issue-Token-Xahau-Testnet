@@ -1,7 +1,7 @@
 const xrpl = require("xrpl");
 
-const seed1 = "ssArZ9uZfEvzGUxiyxRSK5s9Awjd7";
-const seed2 = "snKH5Qafn2HaujR1whjjChz1oj8ry";
+const seed1 = "ssvQ3fRMn1ZCYq7tZvyAjuKKpPxQr";
+const seed2 = "shC5CzVvufENnknJsH6iYztqAtQGX";
 
 // Connect ---------------------------------------------------------------------
 async function main() {
@@ -19,8 +19,6 @@ async function main() {
   const cold_settings_tx = {
     TransactionType: "AccountSet",
     Account: cold_wallet.address,
-    TickSize: 5,
-    Domain: "6578616D706C652E636F6D", // "example.com"
     SetFlag: xrpl.AccountSetAsfFlags.asfDefaultRipple,
     Flags: xrpl.AccountSetTfFlags.tfDisallowXRP,
   };
@@ -41,7 +39,6 @@ async function main() {
   const hot_settings_tx = {
     TransactionType: "AccountSet",
     Account: hot_wallet.address,
-    Domain: "6578616D706C652E636F6D", // "example.com"
   };
 
   const hst_prepared = await client.autofill(hot_settings_tx);
@@ -57,7 +54,7 @@ async function main() {
   }
 
   // Create trust line from hot to cold address --------------------------------
-  const currency_code = "PUP";
+  const currency_code = "PEP";
   const trust_set_tx = {
     TransactionType: "TrustSet",
     Account: hot_wallet.address,
