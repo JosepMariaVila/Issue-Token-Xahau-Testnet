@@ -12,8 +12,8 @@ Step by step guide to use the code:
 
 4) Open a terminal and type (it creates a basic package.json): npm init --yes
 
-Then type in the terminal (it installs the library): npm install --save xrpl
+5) Then type in the terminal (it installs the library): npm install --save xrpl
 
-Populate the code with your testnet seeds (not the ones that I have as example in it) and the name of the currency to issue.
+6) Populate the code with your testnet seeds (not the ones that I have as example in it) and the name of the currency to issue.
 
-Type in the terminal: node issueTokenXahauTestnetSimple.js
+7) Type in the terminal: node issueTokenXahauTestnetSimple.js
